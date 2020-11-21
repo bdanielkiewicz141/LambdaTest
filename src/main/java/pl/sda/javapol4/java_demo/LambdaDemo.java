@@ -1,5 +1,7 @@
 package pl.sda.javapol4.java_demo;
 
+import java.util.stream.Stream;
+
 class MyRunnable implements Runnable {
     public void run() {
         System.out.println("From MyRunnable class");
@@ -48,7 +50,20 @@ public class LambdaDemo {
         StringToint test = a -> a.length();
     test.nameLenght("test");
 
+
+        Stream<Object> objects = Stream.of("mateusz", "marek", "adrian", "Iza" , "Kamila");
+        Stream<String> neames = Stream.of("mateusz", "marek", "adrian", "Iza" , "Kamila", "Barteumuidas");
+        neames.filter(string -> string.length()>6).
+                map(s -> s.length()).
+                forEach(s -> System.out.println(s));
+
+    objects.filter(o -> o instanceof String).
+            map(o -> (String) o).filter(string -> string.length()>6).
+            map(s -> s.length()).
+            forEach(s -> System.out.println(s));
+
     }
+
 
 
 
