@@ -51,6 +51,7 @@ public class LambdaDemo {
     test.nameLenght("test");
 
 
+
         Stream<Object> objects = Stream.of("mateusz", "marek", "adrian", "Iza" , "Kamila");
         Stream<String> neames = Stream.of("mateusz", "marek", "adrian", "Iza" , "Kamila", "Barteumuidas");
         neames.filter(string -> string.length()>6).
